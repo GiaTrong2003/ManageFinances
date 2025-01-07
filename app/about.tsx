@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const notFound = () => {
+const about = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>About Us</Text>
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default notFound;
+export default about;
