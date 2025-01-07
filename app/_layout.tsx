@@ -1,4 +1,7 @@
 import { Stack } from "expo-router";
+import { LogBox } from "react-native";
+
+LogBox.ignoreAllLogs(true)
 
 // define the layout for the root of the app
 export default function RootLayout() {
@@ -6,16 +9,9 @@ export default function RootLayout() {
     <Stack>
       {/* The first page */}
       <Stack.Screen
-        name="index"
+        name="(tabs)"
         options={{
-          headerTitle: "Gia Trong",
-        }}
-      />
-      {/*  */}
-      <Stack.Screen
-        name="about"
-        options={{
-          headerTitle: "About",
+            headerShown: false,
         }}
       />
       {/* not found */}
