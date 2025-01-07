@@ -18,6 +18,8 @@ export default function RootLayout() {
           headerTitle: "About",
         }}
       />
+      {/* not found */}
+      <Stack.Screen name="not-found"/>
     </Stack>
   );
 }
