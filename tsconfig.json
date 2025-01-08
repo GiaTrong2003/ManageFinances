@@ -5,10 +5,12 @@
     "paths": {
       "@/*": [
         "./*" // Path: my-app1/*
+        // The @ symbol is a custom path alias for importing custom components
+        // and other modules instead of relative paths. Expo CLI automatically configures it in tsconfig.json.
       ]
     }
   },
-  "include": [
+  "include": [ // Include the following files in the TypeScript compilation
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",

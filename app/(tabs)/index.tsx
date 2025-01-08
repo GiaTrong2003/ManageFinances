@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 
 import ImageViewer from "@/components/ImageViewer";
+import Button from "@/components/Button";
 
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
@@ -12,8 +13,15 @@ const HomeScreen = () => {
     // view => div
     <View style={styles.container}>
       {/* text => p */}
+      {/* image */}
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} />
+      </View>
+
+      {/* button */}
+      <View style={styles.footerContainer}>
+        <Button label="Choose a photo" />
+        <Button label="Use this photo" />
       </View>
     </View>
   );
@@ -40,6 +48,10 @@ const styles = StyleSheet.create({
     height: 440,
     borderRadius: 18,
     margin: 10,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: "center",
   },
 });
 
