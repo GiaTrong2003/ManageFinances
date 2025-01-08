@@ -5,10 +5,25 @@ import { Image } from "expo-image";
 
 import ImageViewer from "@/components/ImageViewer";
 import Button from "@/components/Button";
+import * as ImagePicker from 'expo-image-picker';
 
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
 const HomeScreen = () => {
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      console.log(result);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
   return (
     // view => div
     <View style={styles.container}>
@@ -20,8 +35,8 @@ const HomeScreen = () => {
 
       {/* button */}
       <View style={styles.footerContainer}>
-        <Button label="Choose a photo" />
-        <Button label="Use this photo" />
+      <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+      <Button label="Use this photo" />
       </View>
     </View>
   );
