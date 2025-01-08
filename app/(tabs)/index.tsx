@@ -1,14 +1,20 @@
 import { Link } from "expo-router";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { Image } from "expo-image";
+
+import ImageViewer from "@/components/ImageViewer";
+
+const PlaceholderImage = require("@/assets/images/background-image.png");
 
 const HomeScreen = () => {
   return (
     // view => div
     <View style={styles.container}>
       {/* text => p */}
-      <Text style={styles.welcome}>Welcome to the Home Screen!</Text>
-      <Link href={"/about"}>Go to about screen</Link>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} />
+      </View>
     </View>
   );
 };
@@ -24,6 +30,15 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: "center",
+    margin: 10,
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  image: {
+    width: 320,
+    height: 440,
+    borderRadius: 18,
     margin: 10,
   },
 });

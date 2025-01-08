@@ -15,7 +15,7 @@ export default function RootLayout() {
         }}
       />
       {/* not found */}
-      <Stack.Screen name="not-found"/>
+      <Stack.Screen name="+not-found"/>
     </Stack>
   );
 }
